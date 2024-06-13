@@ -360,9 +360,6 @@ export const authoritydrivertable = pgTable("authoritydriver", {
         type TIdriverauth = typeof authoritydrivertable.$inferInsert;
         type TSdriverauth = typeof authoritydrivertable.$inferSelect;
 
-// owners relations
-        type TIresturantownerRoleAuth = typeof authoritytable.$inferInsert;
-        type TSresturantownerRoleAuth = typeof authoritytable.$inferSelect;
 
 
   export {
@@ -442,8 +439,5 @@ export const authoritydrivertable = pgTable("authoritydriver", {
     TSAuthOnUser,
 
     TIdriverauth,
-    TSdriverauth,
-
-    TIresturantownerRoleAuth,
-    TSresturantownerRoleAuth
+    TSdriverauth
   };

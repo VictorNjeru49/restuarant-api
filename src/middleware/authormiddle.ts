@@ -39,4 +39,3 @@ export const adminRoleAuth = async (c: Context, next: Next) => await authMiddlew
 export const userRoleAuth = async (c: Context, next: Next) => await authMiddleware(c, next, "user");
 export const bothRoleAuth = async (c: Context, next: Next) => await bothMiddleware(c, next);
 export const driverRoleAuth = async (c: Context, next: Next) => await authMiddleware(c, next, "driver");
-export const restaurant_ownerRoleAuth = async (c: Context, next: Next) => await authMiddleware(c, next, "restaurantowner");

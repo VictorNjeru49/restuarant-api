@@ -1,7 +1,7 @@
 
 import "dotenv/config";
 import { Context } from "hono";
-import { createauthorityService, userLoginService, driverLoginService, ownerService } from "./authentication.service";
+import { createauthorityService, userLoginService, driverLoginService } from "./authentication.service";
 import bycrpt from "bcrypt";
 import { sign } from "hono/jwt";
 
@@ -66,20 +66,5 @@ export const registerdriverUser = async (c: Context)=> {
     }
 }
 
-
-export const registerownerUser = async (c: Context)=>{
-    try {
-        const owner = await c.req.json();
-        const pass = owner.password;
-        const hashedPassword = await bycrpt.hash(pass, 10);
-        owner.password = hashedPassword;
-        const createdUser = await ownerService(owner);
-        if (!createdUser) return c.text("User not created", 404);
-        return c.json({ message: createdUser }, 201);
-
-    } catch (error: any) {
-        return c.json({ error: error?.message }, 400)
-    }   
-}
 
 

@@ -1,5 +1,5 @@
 
-import { authoritytable,authoritydrivertable, authorityownertable,  TIAuthOnUser, TSAuthOnUser,  TIdriverauth, TSdriverauth, TSresturantownerRoleAuth } from "../drizzle/schema";
+import { authoritytable,authoritydrivertable,  TIAuthOnUser, TSAuthOnUser,  TIdriverauth, TSdriverauth } from "../drizzle/schema";
 import db from "../drizzle/db";
 import { sql } from "drizzle-orm";
 
@@ -63,26 +63,5 @@ export const driverLoginService = async (driver: TSdriverauth) =>{
     })
 }
 
-
-
 export const createownerservice = async () => {}
 
-export const ownerService = async (owner: TSresturantownerRoleAuth) =>{
-    const ownersname = owner;
-    return await db.query.authorityownertable.findFirst({
-        columns: {
-            ownersname: true,
-            role: true,
-            password: true
-        }, where: sql` ${authorityownertable.ownersname} = ${ownersname}`,
-        with: {
-            owner: {
-                columns: {
-                    id: true,
-                    restaurant_id: true,
-                    owner_id: true
-                }
-            }
-        }
-    })
-}

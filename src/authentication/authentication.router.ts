@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import { zValidator } from '@hono/zod-validator'
-import { registerUser, loginUser, registerdriverUser, registerownerUser } from './authentication.contoller'
+import { registerUser, loginUser, registerdriverUser } from './authentication.contoller'
 import { userloginvalidator, loginvalidator,driverloginvalidator, ownershipvalidator } from '../validators'
 
 export const authorityrelationship = new Hono();
@@ -23,9 +23,3 @@ authorityrelationship.post('/driver', zValidator('json', driverloginvalidator, (
         return c.json(result.error, 400)
     }
 }), registerdriverUser)
-
-authorityrelationship.post('/ownership', zValidator('json', ownershipvalidator, (result, c) => {
-    if (!result.success) {
-        return c.json(result.error, 400)
-    }
-}), registerownerUser)
