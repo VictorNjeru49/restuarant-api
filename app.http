@@ -403,7 +403,7 @@ Content-Type: application/json
 DELETE http://localhost:3000/restaurant/6
 
 ###
-POST http://localhost:3000/register
+POST http://localhost:8000/register
 Content-Type: application/json
 
 {
@@ -416,7 +416,7 @@ Content-Type: application/json
 
 
 ###
-POST http://localhost:3000/register
+POST http://localhost:8000/register
 Content-Type: application/json
 
 {
@@ -428,7 +428,7 @@ Content-Type: application/json
 }
 
 ### user created
-POST http://localhost:3000/register
+POST http://localhost:8000/register
 Content-Type: application/json
 
 {
@@ -443,7 +443,7 @@ Content-Type: application/json
 
 
 ### admin logins
-POST http://localhost:3000/login
+POST http://localhost:8000/login
 Content-Type: application/json
 
 {
@@ -453,7 +453,7 @@ Content-Type: application/json
 
 
 ### user logins
-POST http://localhost:3000/login
+POST http://localhost:8000/login
 Content-Type: application/json
 
 {
@@ -463,7 +463,7 @@ Content-Type: application/json
 
 
 ### driver
-POST http://localhost:3000/login
+POST http://localhost:8000/login
 Content-Type: application/json
     
 {
@@ -472,26 +472,26 @@ Content-Type: application/json
 }
 
 ###driver user
-GET http://localhost:3000/driver
+GET http://localhost:8000/driver
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwZXRlciIsInJvbGUiOiJkcml2ZXIiLCJleHAiOjE3MTgyOTQ5OTh9.I76jsKBnxItOrcXjBe2YXK3dZ0JIAlH4_rdMxCMxC8U
 ### user
-GET http://localhost:3000/users/2
+GET http://localhost:8000/users/2
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpZmFuIiwicm9sZSI6InVzZXIiLCJleHAiOjE3MTgyOTUxNzJ9.iJ29LjOirLpjmaxmy3_Nd0uS97v7fF1tRXUb04488-4
 
 ### user comments
-GET http://localhost:3000/comment/2
+GET http://localhost:8000/comment/2
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpZmFuIiwicm9sZSI6InVzZXIiLCJleHAiOjE3MTgyOTUxNzJ9.iJ29LjOirLpjmaxmy3_Nd0uS97v7fF1tRXUb04488-4
 
 
 
 
 ###admin categories
-GET http://localhost:3000/categories
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI5NTI2M30.AzAE_CBzPiOoHQwcpMlCKHW73IjN_nR874cdb3CkJF4
+GET http://localhost:8000/categories
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI5OTQ1N30.sOAvl1Owx5oHGEgWzfyRV45Z6SeobPSy7XsiJgD9igA
 
 
 ###admin categories
-PUT  http://localhost:3000/categories/1
+PUT  http://localhost:8000/categories/1
 Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI5NTI2M30.AzAE_CBzPiOoHQwcpMlCKHW73IjN_nR874cdb3CkJF4
 Content-Type: application/json
 
@@ -502,12 +502,12 @@ Content-Type: application/json
 
 
 ###admin categories
-DELETE  http://localhost:3000/categories/9
+DELETE  http://localhost:8000/categories/9
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI5NTI2M30.AzAE_CBzPiOoHQwcpMlCKHW73IjN_nR874cdb3CkJF4
 
 
 ###admin categories
-POST   http://localhost:3000/categories
+POST   http://localhost:8000/categories
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI5NTI2M30.AzAE_CBzPiOoHQwcpMlCKHW73IjN_nR874cdb3CkJF4
 Content-Type: application/json
 
@@ -518,24 +518,24 @@ Content-Type: application/json
 
 
 ###admin city
-GET http://localhost:3000/city
+GET http://localhost:8000/city
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI4NjI4NX0.zGvnVRzineTYp-sIEJARGkD4HlUtukBHs47nWmixhlE
 
 ###admin address
-GET http://localhost:3000/address
+GET http://localhost:8000/address
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI4NjI4NX0.zGvnVRzineTYp-sIEJARGkD4HlUtukBHs47nWmixhlE
 
 ###admin restuarant
-GET http://localhost:3000/restaurant_owner
+GET http://localhost:8000/restaurant_owner
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI4NjI4NX0.zGvnVRzineTYp-sIEJARGkD4HlUtukBHs47nWmixhlE
 
 
 
 ###admin comments
-GET http://localhost:3000/comment
+GET http://localhost:8000/comment
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI4NjI4NX0.zGvnVRzineTYp-sIEJARGkD4HlUtukBHs47nWmixhlE
 
 
 ###admin menu items
-GET http://localhost:3000/menu_item
+GET http://localhost:8000/menu_item
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI4NjI4NX0.zGvnVRzineTYp-sIEJARGkD4HlUtukBHs47nWmixhlE
