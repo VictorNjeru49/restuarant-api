@@ -1,0 +1,541 @@
+
+### users
+GET http://localhost:3000/users
+
+###
+GET http://localhost:3000/users/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpZmFuIiwicm9sZSI6InVzZXIiLCJleHAiOjE3MTgxOTUwMDB9.quDhHfd3XjBnJUJIgjqEaU-32LIjNOgTHU9MTDt_X1I
+
+###
+PUT http://localhost:3000/users/2
+Content-Type: application/json
+
+{
+    
+    "name": "ifanMaina"
+}
+
+### insert
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+"id": 15,
+"name": "Olivia Taylor",
+"contact_phone": "7777777777",
+"phone_verified": false,
+"email": "olivia.taylor@example.com",
+"email_verified": true,
+"confirmation_code": "stu345",
+"password": "hashedpasswordstu"
+}
+###
+DELETE http://localhost:3000/users/5
+
+
+
+
+
+
+### category
+GET http://localhost:3000/categories
+
+###
+GET http://localhost:3000/categories/3
+
+###
+PUT http://localhost:3000/categories/1
+Content-Type: application/json
+
+{
+    "name": "cakes"
+}
+
+###
+POST http://localhost:3000/categories
+Content-Type: application/json
+
+{   
+     "id": 9,
+    "name": "Soups"
+    
+}
+###
+DELETE http://localhost:3000/categories/5
+
+
+
+### restuarant owner
+
+GET http://localhost:3000/restaurant_owner
+
+###
+GET http://localhost:3000/restaurant_owner/1
+
+###
+PUT http://localhost:3000/restaurant_owner/1
+Content-Type: application/json
+{
+
+}
+###
+
+POST http://localhost:3000/restaurant_owner
+Content-Type: application/json
+
+{
+"id": 5,
+"restaurant_id": 2,
+"owner_id": 4
+}
+
+
+### state changes 
+GET http://localhost:3000/state
+
+###
+GET http://localhost:3000/state/3
+
+###
+PUT http://localhost:3000/state
+Content-Type: application/json
+
+{
+    "name": "Newyork",
+    "code": "345"
+}
+
+###
+POST http://localhost:3000/state
+Content-Type: application/json
+
+{
+    "id": 9,
+    "name": "District Of Columbia",
+    "code": "DC"
+}
+
+### 
+DELETE http://localhost:3000/state/1
+
+
+
+
+
+### address changes
+GET http://localhost:3000/address
+
+###
+GET http://localhost:3000/address/1
+
+###
+PUT http://localhost:3000/address/1
+Content-Type: application/json
+
+{
+    "zip_code": "233 New York",
+}
+
+###
+POST http://localhost:3000/address
+Content-Type: application/json
+
+{
+"id": 5,
+"street_address_1": "159 Oak St",
+"street_address_2": "",
+"zip_code": "24680",
+"delivery_instructions": "Leave order with the manager at the front desk",
+"user_id": 3,
+"city_id": 13,
+"created at": "2023-06-05 18:09:53",
+"updated at": "2023-06-05 18:09:53"
+}
+
+
+### 
+DELETE http://localhost:3000/address/2
+
+
+
+### city changes
+GET http://localhost:3000/city
+
+###
+GET http://localhost:3000/city/1
+
+###
+PUT http://localhost:3000/city/1
+Content-Type: application/json
+
+{
+    "name": "california",
+    "state_id": "674"
+}
+###
+POST http://localhost:3000/city
+Content-Type: application/json
+
+{   
+    "id": 13, 
+    "name": "Oklahoma City",
+    "state_id": 8
+}
+
+### 
+DELETE http://localhost:3000/city/6
+
+
+
+### comments
+GET http://localhost:3000/comment
+
+###
+GET http://localhost:3000/comment/1
+
+### update
+PUT http://localhost:3000/comment
+
+### insert
+POST http://localhost:3000/comment
+Content-Type: application/json
+
+ {
+    
+"id": 5,
+"order_id": 5,
+"user_id": 1,
+"comment_text": "The order was late and the driver didn't follow my instructions.",
+"is_complaint": true,
+"is_praise": false
+}
+ 
+
+
+### drivers
+ GET http://localhost:3000/driver
+
+###
+GET http://localhost:3000/driver/1
+
+###
+POST http://localhost:3000/driver
+Content-Type: application/json
+
+ {
+    "id": 6,
+    "car_make": "Hyundai",
+    "car_model": "Sonata",
+    "car_year": 2022,
+    "user_id": 2,
+    "online": false,
+    "delivering": true,
+ }
+
+###
+DELETE http://localhost:3000/driver/6
+
+
+
+### menu items
+GET http://localhost:3000/menu_item
+
+###
+GET http://localhost:3000/menu_item/2
+
+###
+PUT http://localhost:3000/menu_item
+Content-Type: application/json
+{
+    "zip_code":"7765"
+}
+
+###
+POST http://localhost:3000/menu_item
+Content-Type: application/json
+
+{  
+"id": 5,
+"name": "Bacon-Wrapped Filet Mignon",
+"restaurant_id": 5,
+"category_id": 3,
+"description": "Tender filet mignon wrapped in crispy bacon, served with roasted potatoes and garlic butter.",
+"ingredients": "Filet mignon, bacon, potatoes, garlic, butter",
+"price": 32.99,
+"active": true
+
+}
+
+
+
+
+### order menu item
+GET http://localhost:3000/order_menu_item
+
+
+###
+GET http://localhost:3000/order_menu_item/1
+
+
+###
+POST http://localhost:3000/order_menu_item
+Content-Type: application/json
+
+{
+"id": 6,
+"order_id": 6,
+"menu_item_id": 6,
+"quantity": 1,
+"item_price": 32.99,
+"price": 32.99,
+"comment": null
+}
+
+### order status
+GET http://localhost:3000/order_status
+
+### 
+GET http://localhost:3000/order_status/1
+
+###
+POST http://localhost:3000/order_status
+Content-Type: application/json
+
+
+{
+"id": 6,
+"order_id": 5,
+"status_catalog_id": 10
+}
+
+
+
+### orders
+GET http://localhost:3000/orders
+
+###
+GET http://localhost:3000/orders/1
+
+###
+PUT http://localhost:3000/orders/1
+{
+    "estimated_delivery_time": "2020-06-09"
+}
+###
+
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+    "id": 1,
+    "restaurant_id": 1,
+    "estimated_delivery_time": "2023-06-11 14:15:00",
+    "actual_delivery_time": "2023-06-11 14:10:00",
+    "delivery_address_id": 1,
+    "user_id": 123,
+    "driver_id": 1,
+    "price": 25.99,
+    "discount": 3.00,
+    "final_price": 22.99,
+    "comment": "No spicy sauce please",
+    "created_at": "2023-06-11 13:45:00",
+    "updated_at": "2023-06-11 14:10:00"
+}
+
+
+
+###
+DELETE http://localhost:3000/orders/1
+
+### order menu
+
+GET http://localhost:3000/order_menu_item
+
+###
+GET http://localhost:3000/order_menu_item/1
+
+###
+PUT http://localhost:3000/order_menu_item/1
+{
+
+}
+###
+
+POST http://localhost:3000/order_menu_item
+Content-Type: application/json
+
+{
+    "id": 1,
+    "order_id": 1,
+    "menu_item_id": 1,
+}
+###
+DELETE http://localhost:3000/order_menu_item/6
+
+
+### restaurant
+
+GET http://localhost:3000/restaurant
+
+###
+GET http://localhost:3000/restaurant/1
+
+###
+PUT http://localhost:3000/restaurant/1
+{
+
+}
+###
+
+POST http://localhost:3000/restaurant
+Content-Type: application/json
+
+{
+"id": 6,
+"name": "Delectable Delights",
+"street_address": "753 Maple Ave",
+"zip_code": "13579",
+"city_id": 6
+}
+
+
+###
+DELETE http://localhost:3000/restaurant/6
+
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "userId": 1,
+    "username": "njeru",
+    "password": "wanjira",
+    "role": "admin"
+
+}
+
+
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "userId": 2,
+    "username": "ifan",
+    "password": "maina",
+    "role": "user"
+
+}
+
+### user created
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    
+    "userId": 3,
+    "username": "peter",
+    "password": "drivern",
+    "role": "driver"
+
+}
+
+
+
+### admin logins
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+   "username": "njeru",
+    "password": "wanjira"
+}
+
+
+### user logins
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+   "username": "ifan",
+    "password": "maina"
+}
+
+
+### driver
+POST http://localhost:3000/login
+Content-Type: application/json
+    
+{
+    "username": "peter",
+    "password": "drivern"
+}
+
+###driver user
+GET http://localhost:3000/driver
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwZXRlciIsInJvbGUiOiJkcml2ZXIiLCJleHAiOjE3MTgyOTQ5OTh9.I76jsKBnxItOrcXjBe2YXK3dZ0JIAlH4_rdMxCMxC8U
+### user
+GET http://localhost:3000/users/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpZmFuIiwicm9sZSI6InVzZXIiLCJleHAiOjE3MTgyOTUxNzJ9.iJ29LjOirLpjmaxmy3_Nd0uS97v7fF1tRXUb04488-4
+
+### user comments
+GET http://localhost:3000/comment/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpZmFuIiwicm9sZSI6InVzZXIiLCJleHAiOjE3MTgyOTUxNzJ9.iJ29LjOirLpjmaxmy3_Nd0uS97v7fF1tRXUb04488-4
+
+
+
+
+###admin categories
+GET http://localhost:3000/categories
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI5NTI2M30.AzAE_CBzPiOoHQwcpMlCKHW73IjN_nR874cdb3CkJF4
+
+
+###admin categories
+PUT  http://localhost:3000/categories/1
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI5NTI2M30.AzAE_CBzPiOoHQwcpMlCKHW73IjN_nR874cdb3CkJF4
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Pizza"
+}
+
+
+###admin categories
+DELETE  http://localhost:3000/categories/9
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI5NTI2M30.AzAE_CBzPiOoHQwcpMlCKHW73IjN_nR874cdb3CkJF4
+
+
+###admin categories
+POST   http://localhost:3000/categories
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI5NTI2M30.AzAE_CBzPiOoHQwcpMlCKHW73IjN_nR874cdb3CkJF4
+Content-Type: application/json
+
+{
+    "id": 11,
+    "name": "lazania"
+}
+
+
+###admin city
+GET http://localhost:3000/city
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI4NjI4NX0.zGvnVRzineTYp-sIEJARGkD4HlUtukBHs47nWmixhlE
+
+###admin address
+GET http://localhost:3000/address
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI4NjI4NX0.zGvnVRzineTYp-sIEJARGkD4HlUtukBHs47nWmixhlE
+
+###admin restuarant
+GET http://localhost:3000/restaurant_owner
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI4NjI4NX0.zGvnVRzineTYp-sIEJARGkD4HlUtukBHs47nWmixhlE
+
+
+
+###admin comments
+GET http://localhost:3000/comment
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI4NjI4NX0.zGvnVRzineTYp-sIEJARGkD4HlUtukBHs47nWmixhlE
+
+
+###admin menu items
+GET http://localhost:3000/menu_item
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuamVydSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTcxODI4NjI4NX0.zGvnVRzineTYp-sIEJARGkD4HlUtukBHs47nWmixhlE
