@@ -21,7 +21,7 @@ const authentication_router_1 = require("./authentication/authentication.router"
 const app = new hono_1.Hono();
 app.get('/', async (c) => {
     try {
-        let html = (0, fs_1.readFileSync)('../index.html', 'utf-8');
+        let html = (0, fs_1.readFileSync)('./index.html', 'utf-8');
         return c.html(html);
     }
     catch (error) {

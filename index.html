@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RESTAURANT WEBSITE</title>
     <style>
+        body{
+            background-color: lightblue;
+        }
         header{
             background-color: black;
             color: white;
@@ -15,21 +18,411 @@
         footer{
             align-items: center;
             text-align: center;
+            font-size: 20px;
         }
-
+        footer a{
+            color: rgb(55, 68, 182);
+            text-decoration: none;
+        }
+        .container{
+            width: 70%;
+            margin: 0 auto;
+        }
+        .container hr{
+            border: 2px solid blue;
+            margin-bottom: 20px;
+        }
+        .container a{
+            list-style-type: none;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        h3{
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: capitalize;
+        } 
+        hr{
+            border: 2px solid rgb(75, 75, 78);
+        }
+        pre{
+            background-color: rgb(240, 240, 240);
+            padding: 20px;
+            border: 1px solid rgb(75, 75, 78);
+            border-radius: 10px;
+        }
+        .toggle{
+            margin-top: 20px;
+        }
+        ul{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap; 
+            justify-content: space-between;       
+        }
+        ul li{
+            list-style-type: none;
+            margin-bottom: 30px;
+            text-transform: capitalize;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+        ul a{
+            list-style-type: none;
+            text-decoration: none;
+            color: white;
+        }
+        ul li:hover{
+            opacity: 1;
+        }
+        ul li:visited{
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>VICTOR NJERU WANJIRA</h1>
+        <p>RESTAURANT API</p>
+        <div class="toggle">
+            <ul>
+                <li><a href="#Users">users</a></li>
+                <li><a href="#Address">address</a></li>
+                <li><a href="#Restaurant owner">owner</a></li>
+                <li><a href="#city">city</a></li>
+                <li><a href="#Categories">categories</a></li>
+                <li><a href="#driver">driver</a></li>
+                <li><a href="#comments">comments</a></li>
+                <li><a href="#order menu items">orderItems</a></li>
+                <li><a href="#Menu items">items</a></li>
+                <li><a href="#orders">orders</a></li>
+                <li><a href="#order status">status</a></li>
+                <li><a href="#Restaurant">restaurant</a></li>
+                <li><a href="#state">state</a></li>
+                <li><a href="#status catalog">catalog</a></li>
+
+            </ul>
+        </div>
     </header>
 
     <div class="container">
+        <h2>Endpoints</h2>
+        <hr>
+<!-------------USERS--------------->
+        <h3 id="Users">Users</h3>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/users">https://newrestuarantapi.azurewebsites.net/users</a> </code></pre>
+        <pre><code>GET <a href="https://my-restaurant-api.azurewebsites.net/users/1">https://my-restaurant-api.azurewebsites.net/users/1</a> </code></pre>
+        <pre><code>DELETE <a href="https://my-restaurant-api.azurewebsites.net/users/1">https://my-restaurant-api.azurewebsites.net/users/1</a></code></pre>
+        <pre><code>POST<a href="https://my-restaurant-api.azurewebsites.net/users">https://my-restaurant-api.azurewebsites.net/users</a>
+            {
+                "id": 1,
+                "name": "john",
+                "email": "john@example.com"
+            }
+        </code></pre>
+        <pre><code>PUT <a href="https://my-restaurant-api.azurewebsites.net/users">https://my-restaurant-api.azurewebsites.net/users</a>
+            {
+                "id": 1,
+                "name": "john doe"
+            }
+        </code></pre>
+
+<!-------------ADDRESS--------------->
+        <h3 id="Address">Address</h3>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/address">https://newrestuarantapi.azurewebsites.net/address</a></code></pre>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/address/1">https://newrestuarantapi.azurewebsites.net/address/1</a></code></pre>
+        <pre><code>DELETE <a href="https://newrestuarantapi.azurewebsites.net/address/1">https://newrestuarantapi.azurewebsites.net/address/1</a></code></pre>
+        <pre><code>POST <a href="https://newrestuarantapi.azurewebsites.net/address">https://newrestuarantapi.azurewebsites.net/address</a>
+             {
+                "id": 1,
+                "street": "123 Main St",
+                "city": "Anytown",
+                "state": "CA",
+                "zip": "12345"
+            }
+        </code></pre>
+        <pre><code>PUT <a href="https://newrestuarantapi.azurewebsites.net/address">https://newrestuarantapi.azurewebsites.net/address</a>
+            {
+                "id": 1,
+                "street": "456 Oak Rd",
+                "city": "Othertown",
+                "state": "NY",
+                "zip": "54321"
+            }
+        </code></pre>
+
+<!-------------RESTAURANT OWNER--------------->
+        <h3 id="Restaurant owner">Restaurant owner</h3>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/restaurant_owner">https://newrestuarantapi.azurewebsites.net/restaurant_owner</a> </code></pre>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/restaurant_owner/1">https://newrestuarantapi.azurewebsites.net/restaurant_owner/1</a></code></pre>
+        <pre><code>DELETE <a href="https://newrestuarantapi.azurewebsites.net/restaurant_owner/1">https://newrestuarantapi.azurewebsites.net/restaurant_owner/1</a></code></pre>
+        <pre><code>POST <a href="https://newrestuarantapi.azurewebsites.net/restaurant_owner">https://newrestuarantapi.azurewebsites.net/restaurant_owner</a>
+            {
+                "id": 1,
+                "name": "John Smith",
+                "email": "jsmith@example.com",
+                "phone": "123-456-7890"
+            }
+        </code></pre>
+        <pre><code>PUT <a href="https://newrestuarantapi.azurewebsites.net/restaurant_owner">https://newrestuarantapi.azurewebsites.net/restaurant_owner</a>
+            {
+                "id": 1,
+                "name": "John Doe",
+                "email": "jdoe@example.com",
+                "phone": "987-654-3210"
+            }
+        </code></pre>
+
+
+<!-------------CITY--------------->
+        <h3 id="city">city</h3>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/city">https://newrestuarantapi.azurewebsites.net/city</a> </code></pre>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/city/1">https://newrestuarantapi.azurewebsites.net/city/1</a></code></pre>
+        <pre><code>DELETE <a href="https://newrestuarantapi.azurewebsites.net/city/1">https://newrestuarantapi.azurewebsites.net/city/1</a></code></pre>
+        <pre><code>POST <a href="https://newrestuarantapi.azurewebsites.net/city">https://newrestuarantapi.azurewebsites.net/city</a>
+            {
+                "id": 1,
+                "name": "Anytown",
+                "state": "CA"
+            }                
+        </code></pre>
+        <pre><code>PUT <a href="https://newrestuarantapi.azurewebsites.net/city">https://newrestuarantapi.azurewebsites.net/city</a>
+            {
+                "id": 1,
+                "name": "Othertown",
+                "state": "NY"
+            }
+        </code></pre>
+
+
+<!-------------CATEGORIES--------------->
+        <h3 id="Categories">Categories</h3>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/categories">https://newrestuarantapi.azurewebsites.net/categories</a> </code></pre>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/categories/1">https://newrestuarantapi.azurewebsites.net/categories/1</a></code></pre>
+        <pre><code>DELETE <a href="https://newrestuarantapi.azurewebsites.net/categories/1">https://newrestuarantapi.azurewebsites.net/categories/1</a></code></pre>
+        <pre><code>POST <a href="https://newrestuarantapi.azurewebsites.net/categories">https://newrestuarantapi.azurewebsites.net/categories</a>
+            {
+                "id": 1,
+                "name": "Appetizers",
+                "description": "Small dishes served before the main course"
+            }
+        </code></pre>
+        <pre><code>PUT <a href="https://newrestuarantapi.azurewebsites.net/categories">https://newrestuarantapi.azurewebsites.net/categories</a>
+            {
+                "id": 1,
+                "name": "Starters",
+                "description": "Small dishes served before the main course"
+            }
+        </code></pre>
+
+
+<!-------------DRIVER--------------->
+        <h3 id="driver">driver</h3>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/driver">https://newrestuarantapi.azurewebsites.net/driver</a></code></pre>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/driver/1">https://newrestuarantapi.azurewebsites.net/driver/1</a></code></pre>
+        <pre><code>DELETE <a href="https://newrestuarantapi.azurewebsites.net/driver/1">https://newrestuarantapi.azurewebsites.net/driver/1</a></code></pre>
+        <pre><code>POST <a href="https://newrestuarantapi.azurewebsites.net/driver">https://newrestuarantapi.azurewebsites.net/driver</a>
+            {
+                "id": 1,
+                "name": "John Doe",
+                "phone": "123-456-7890",
+                "vehicle_type": "Car"
+            }
+        </code></pre>
+        <pre><code>PUT <a href="https://newrestuarantapi.azurewebsites.net/driver">https://newrestuarantapi.azurewebsites.net/driver</a>
+            {
+                "id": 1,
+                "name": "Jane Smith",
+                "phone": "987-654-3210",
+                "vehicle_type": "Motorcycle"
+            }
+        </code></pre>
+
+
+<!-------------COMMENTS--------------->
+        <h3 id="comments">comments</h3>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/comment">https://newrestuarantapi.azurewebsites.net/comment</a> </code></pre>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/comment/1">https://newrestuarantapi.azurewebsites.net/comment/1</a></code></pre>
+        <pre><code>DELETE <a href="https://newrestuarantapi.azurewebsites.net/comment/1">https://newrestuarantapi.azurewebsites.net/comment/1</a></code></pre>
+        <pre><code>POST <a href="https://newrestuarantapi.azurewebsites.net/comment">https://newrestuarantapi.azurewebsites.net/comment</a>
+            {
+                "id": 1,
+                "user_id": 1,
+                "order_id": 1,
+                "text": "The food was delicious!"
+            }
+        </code></pre>
+        <pre><code>PUT <a href="https://newrestuarantapi.azurewebsites.net/comment">https://newrestuarantapi.azurewebsites.net/comment</a>
+            {
+                "id": 1,
+                "user_id": 2,
+                "order_id": 2,
+                "text": "The service was excellent!"
+            }
+        </code></pre>
+
+
+<!-------------ORDER MENU ITEMS--------------->
+        <h3 id="order menu items">order menu items</h3>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/order_menu_item">https://newrestuarantapi.azurewebsites.net/order_menu_item</a> </code></pre>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/order_menu_item/1">https://newrestuarantapi.azurewebsites.net/order_menu_item/1</a></code></pre>
+        <pre><code>DELETE <a href="https://newrestuarantapi.azurewebsites.net/order_menu_item/1">https://newrestuarantapi.azurewebsites.net/order_menu_item/1</a></code></pre>
+        <pre><code>POST <a href="https://newrestuarantapi.azurewebsites.net/order_menu_item">https://newrestuarantapi.azurewebsites.net/order_menu_item</a>
+            {
+                "id": 1,
+                "order_id": 1,
+                "menu_item_id": 1,
+                "quantity": 2
+            }
+        </code></pre>
+        <pre><code>PUT <a href="https://newrestuarantapi.azurewebsites.net/order_menu_item">https://newrestuarantapi.azurewebsites.net/order_menu_item</a>
+            {
+                "id": 1,
+                "order_id": 2,
+                "menu_item_id": 2,
+                "quantity": 3
+            }
+        </code></pre>
+
+
+<!-------------MENU ITEMS--------------->
+        <h3 id="Menu items">Menu items</h3>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/menu_item">https://newrestuarantapi.azurewebsites.net/menu_item</a></code></pre>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/menu_item/1">https://newrestuarantapi.azurewebsites.net/menu_item/1</a></code></pre>
+        <pre><code>DELETE <a href="https://newrestuarantapi.azurewebsites.net/menu_item/1">https://newrestuarantapi.azurewebsites.net/menu_item/1</a></code></pre>
+        <pre><code>POST <a href="https://newrestuarantapi.azurewebsites.net/menu_item">https://newrestuarantapi.azurewebsites.net/menu_item</a>
+            {
+                "id": 1,
+                "name": "Caesar Salad",
+                "description": "Romaine lettuce, croutons, Parmesan, and Caesar dressing",
+                "price": 10.99,
+                "category_id": 1
+            }
+        </code></pre>
+        <pre><code>PUT <a href="https://newrestuarantapi.azurewebsites.net/menu_item">https://newrestuarantapi.azurewebsites.net/menu_item</a>
+            {
+                "id": 1,
+                "name": "House Salad",
+                "description": "Mixed greens, tomatoes, cucumbers, and balsamic vinaigrette",
+                "price": 8.99,
+                "category_id": 1
+            }
+        </code></pre>
+
+
+<!-------------ORDERS--------------->
+        <h3 id="orders">orders</h3>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/orders">https://newrestuarantapi.azurewebsites.net/orders</a> </code></pre>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/orders/1">https://newrestuarantapi.azurewebsites.net/orders/1</a></code></pre>
+        <pre><code>DELETE <a href="https://newrestuarantapi.azurewebsites.net/orders/1">https://newrestuarantapi.azurewebsites.net/orders/1</a></code></pre>
+        <pre><code>POST <a href="https://newrestuarantapi.azurewebsites.net/orders">https://newrestuarantapi.azurewebsites.net/orders</a>
+            {
+                "id": 1,
+                "customer_id": 1,
+                "restaurant_id": 1,
+                "status_id": 1,
+                "total_amount": 45.99
+            }
+        </code></pre>
+        <pre><code>PUT <a href="https://newrestuarantapi.azurewebsites.net/orders">https://newrestuarantapi.azurewebsites.net/orders</a>
+            {
+                "id": 1,
+                "customer_id": 2,
+                "restaurant_id": 2,
+                "status_id": 2,
+                "total_amount": 52.75
+            }
+        </code></pre>
+
+
+<!-------------ORDER STATUS--------------->
+        <h3 id="order status">order status</h3>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/order_status">https://newrestuarantapi.azurewebsites.net/order_status</a></code></pre>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/order_status/1">https://newrestuarantapi.azurewebsites.net/order_status/1</a></code></pre>
+        <pre><code>DELETE <a href="https://newrestuarantapi.azurewebsites.net/order_status/1">https://newrestuarantapi.azurewebsites.net/order_status/1</a></code></pre>
+        <pre><code>POST <a href="https://newrestuarantapi.azurewebsites.net/order_status">https://newrestuarantapi.azurewebsites.net/order_status</a>
+            {
+                "id": 1,
+                "name": "Pending"
+            }
+        </code></pre>
+        <pre><code>PUT <a href="https://newrestuarantapi.azurewebsites.net/order_status">https://newrestuarantapi.azurewebsites.net/order_status</a>
+            {
+                "id": 1,
+                "name": "Processing"
+            }
+        </code></pre>
+
+
+<!-------------RESTAURANT--------------->
+        <h3 id="Restaurant">Restaurant</h3>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/restaurant">https://newrestuarantapi.azurewebsites.net/restaurant</a> </code></pre>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/restaurant/1">https://newrestuarantapi.azurewebsites.net/restaurant/1</a></code></pre>
+        <pre><code>DELETE <a href="https://newrestuarantapi.azurewebsites.net/restaurant/1">https://newrestuarantapi.azurewebsites.net/restaurant/1</a></code></pre>
+        <pre><code>POST <a href="https://newrestuarantapi.azurewebsites.net/restaurant">https://newrestuarantapi.azurewebsites.net/restaurant</a>
+            {
+                "id": 1,
+                "name": "The Dining Room",
+                "address_id": 1,
+                "owner_id": 1
+            }
+        </code></pre>
+        <pre><code>PUT <a href="https://newrestuarantapi.azurewebsites.net/restaurant">https://newrestuarantapi.azurewebsites.net/restaurant</a>
+            {
+                "id": 1,
+                "name": "The Bistro",
+                "address_id": 2,
+                "owner_id": 2
+            }
+        </code></pre>
+
+
+<!-------------STATE--------------->
+        <h3 id="state">state</h3>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/state">https://newrestuarantapi.azurewebsites.net/state</a></code></pre>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/state/1">https://newrestuarantapi.azurewebsites.net/state/1</a></code></pre>
+        <pre><code>DELETE <a href="https://newrestuarantapi.azurewebsites.net/state/1">https://newrestuarantapi.azurewebsites.net/state/1</a></code></pre>
+        <pre><code>POST <a href="https://newrestuarantapi.azurewebsites.net/state">https://newrestuarantapi.azurewebsites.net/state</a>
+            {
+                "id": 1,
+                "name": "California",
+                "code": "CA"
+            }
+        </code></pre>
+        <pre><code>PUT <a href="https://newrestuarantapi.azurewebsites.net/state">https://newrestuarantapi.azurewebsites.net/state</a>
+            {
+                "id": 1,
+                "name": "New York",
+                "code": "NY"
+            }
+        </code></pre>
+
+<!-------------STATUS CATALOG--------------->
+        <h3 id="status catalog">status catalog</h3>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/status_catalog">https://newrestuarantapi.azurewebsites.net/status_catalog</a></code></pre>
+        <pre><code>GET <a href="https://newrestuarantapi.azurewebsites.net/status_catalog/1">https://newrestuarantapi.azurewebsites.net/status_catalog/1</a></code></pre>
+        <pre><code>DELETE <a href="https://newrestuarantapi.azurewebsites.net/status_catalog/1">https://newrestuarantapi.azurewebsites.net/status_catalog/1</a></code></pre>
+        <pre><code>POST<a href="https://newrestuarantapi.azurewebsites.net/status_catalog">https://newrestuarantapi.azurewebsites.net/status_catalog</a>
+            {
+                "id": 1,
+                "name": "Pending"
+            }
+        </code></pre>
+        <pre><code>PUT <a href="https://newrestuarantapi.azurewebsites.net/status_catalog">https://newrestuarantapi.azurewebsites.net/status_catalog</a>
+            {
+                "id": 1,
+                "name": "Completed"
+            }
+        </code></pre>
+
+
 
     </div>
-
+    <hr>
     <footer>
         <P>THANK YOU FOR YOUR TIME</P>
+        <p>FOR MORE INFORMATION: <a href="#">helpcenter@gmail.com</a></p>
     </footer>
 </body>
 </html>
