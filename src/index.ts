@@ -20,7 +20,7 @@ import { authorityrelationship } from './authentication/authentication.router'
   
   const app = new Hono()
   
-  app.get('/welcome', (c) => {
+  app.get('/', (c) => {
     return c.text('Hello Hono!')
   })
   
