@@ -23,6 +23,10 @@ import { authorityrelationship } from './authentication/authentication.router'
   app.get('/', (c) => {
     return c.text('Hello Hono!')
   })
+
+  app.notFound((c)=>{
+    return c.text('Not Found', 404)
+  })
   
   //custom routes
   app.route('/', userRouter)
