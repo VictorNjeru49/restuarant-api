@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const node_server_1 = require("@hono/node-server");
 const hono_1 = require("hono");
+const fs_1 = require("fs");
 const users_router_1 = require("./users/users.router");
 const address_router_1 = require("./address/address.router");
 const state_router_1 = require("./state/state.router");
@@ -18,8 +19,17 @@ const restaurantowner_router_1 = require("./restaurant_owner/restaurantowner.rou
 const statuscatalog_router_1 = require("./status_catalog/statuscatalog.router");
 const authentication_router_1 = require("./authentication/authentication.router");
 const app = new hono_1.Hono();
-app.get('/welcome', (c) => {
-    return c.text('Hello Hono!');
+app.get('/', async (c) => {
+    try {
+        let html = (0, fs_1.readFileSync)('../index.html', 'utf-8');
+        return c.html(html);
+    }
+    catch (error) {
+        return c.json({ error: error.message, status: 500 });
+    }
+});
+app.notFound((c) => {
+    return c.text('Not Found', 404);
 });
 //custom routes
 app.route('/', users_router_1.userRouter);
