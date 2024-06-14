@@ -472,8 +472,8 @@ Content-Type: application/json
 }
 
 ###driver user
-GET http://localhost:8000/driver
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwZXRlciIsInJvbGUiOiJkcml2ZXIiLCJleHAiOjE3MTgyOTQ5OTh9.I76jsKBnxItOrcXjBe2YXK3dZ0JIAlH4_rdMxCMxC8U
+GET https://newrestuarantapi.azurewebsites.net/driver/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwZXRlciIsInJvbGUiOiJkcml2ZXIiLCJleHAiOjE3MTgzNzk0NzZ9.IaiH2l4rAXs7L5D-p3yiOD_TgnKGa1qjfurRweMwOxA
 ### user
 GET http://localhost:8000/users/2
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpZmFuIiwicm9sZSI6InVzZXIiLCJleHAiOjE3MTgyOTUxNzJ9.iJ29LjOirLpjmaxmy3_Nd0uS97v7fF1tRXUb04488-4

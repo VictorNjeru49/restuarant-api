@@ -1,5 +1,6 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
+import { readFileSync } from 'fs'
 
   
 import { userRouter } from './users/users.router'
@@ -19,14 +20,21 @@ import { statuscatalogRouter } from './status_catalog/statuscatalog.router'
 import { authorityrelationship } from './authentication/authentication.router'
   
   const app = new Hono()
-  
-  app.get('/', (c) => {
-    return c.text('Hello Hono!')
-  })
+
+  app.get('/', async (c) =>{
+    try{
+    let html =readFileSync('../index.html', 'utf-8');
+    return c.html(html);
+
+  } catch (error: any) {
+    return c.json({ error: error.message, status: 500 })
+  }})
 
   app.notFound((c)=>{
     return c.text('Not Found', 404)
   })
+
+
   
   //custom routes
   app.route('/', userRouter)
